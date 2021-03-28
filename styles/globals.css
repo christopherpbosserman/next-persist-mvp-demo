@@ -14,3 +14,12 @@ a {
 * {
   box-sizing: border-box;
 }
+
+ul {
+  margin: 0;
+  list-style-type: none;
+}
+
+.homeButtonStyle:hover {
+  cursor: pointer;
+}

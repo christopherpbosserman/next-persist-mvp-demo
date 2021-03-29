@@ -32,24 +32,6 @@ function Favorites() {
         <li className="fav" style={favoritesStyles}>
           Favorite 3
         </li>
-        <li className="fav" style={favoritesStyles}>
-          Favorite 4
-        </li>
-        <li className="fav" style={favoritesStyles}>
-          Favorite 5
-        </li>
-        <li className="fav" style={favoritesStyles}>
-          Favorite 6
-        </li>
-        <li className="fav" style={favoritesStyles}>
-          Favorite 7
-        </li>
-        <li className="fav" style={favoritesStyles}>
-          Favorite 8
-        </li>
-        <li className="fav" style={favoritesStyles}>
-          Favorite 9
-        </li>
       </ul>
     </div>
   );

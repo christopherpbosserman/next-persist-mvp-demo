@@ -59,10 +59,24 @@ const Layout = (props) => (
         ></img>
       </Link>
     </div>
-    <>
-      <>{props.children}</>
-    </>
+    <>{props.children}</>
   </div>
 );
 
 export default Layout;
+
+// export const getStaticProps = async () => {
+//   const res = await fetch('https://fakestoreapi.com/products?limit=1');
+//   const data = await res.json();
+//   console.log('getStaticProps', data);
+
+//   if (!data) {
+//     return {
+//       notFound: true,
+//     };
+//   }
+
+//   return {
+//     props: data,
+//   };
+// };

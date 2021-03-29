@@ -3,16 +3,24 @@ import Favorites from '../components/Favorites';
 
 const homeLayout = {
   display: 'flex',
-  justifyContent: 'center',
+  flexDirection: 'column',
+  alignItems: 'center',
   zIndex: '-1',
 };
 
-export default function Home(state) {
-  console.log('indez', state);
+export default function Home(props) {
+  console.log('index:', props);
   return (
     <div className="rock-home" style={homeLayout}>
-      <img alt="therockjohnson" src="/assets/therock.jpg"></img>
-      <Favorites style={{ display: 'flex' }} />
+      {/* <img alt="therockjohnson" src="{/assets/therock.jpg}"></img> */}
+      <img
+        alt="therockjohnson"
+        src={props[0].image}
+        width="800"
+        height="800"
+      ></img>
+      <h1>{props[0].title}</h1>
+      <Favorites />
     </div>
   );
 }

@@ -1,5 +1,24 @@
 import React from 'react';
 
+const containerStyles = {
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  width: '30rem',
+};
+
+const favesContainerStyles = {
+  display: 'flex',
+  flexWrap: 'wrap',
+  padding: 0,
+};
+
+const favoritesStyles = {
+  border: '3px solid red',
+  width: '10rem',
+  height: '16rem',
+};
+
 function Favorites() {
   return (
     <div className="container" style={containerStyles}>
@@ -14,48 +33,26 @@ function Favorites() {
           Favorite 3
         </li>
         <li className="fav" style={favoritesStyles}>
-          Favorite 3
+          Favorite 4
         </li>
         <li className="fav" style={favoritesStyles}>
-          Favorite 3
+          Favorite 5
         </li>
         <li className="fav" style={favoritesStyles}>
-          Favorite 3
+          Favorite 6
         </li>
         <li className="fav" style={favoritesStyles}>
-          Favorite 3
+          Favorite 7
         </li>
         <li className="fav" style={favoritesStyles}>
-          Favorite 3
+          Favorite 8
         </li>
         <li className="fav" style={favoritesStyles}>
-          Favorite 3
-        </li>
-        <li className="fav" style={favoritesStyles}>
-          Favorite 3
+          Favorite 9
         </li>
       </ul>
     </div>
   );
 }
-
-const containerStyles = {
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-};
-
-const favesContainerStyles = {
-  display: 'grid',
-
-  width: '25rem',
-};
-
-const favoritesStyles = {
-  position: 'relative',
-  border: '3px solid red',
-  width: '5rem',
-  height: '5rem',
-};
 
 export default Favorites;

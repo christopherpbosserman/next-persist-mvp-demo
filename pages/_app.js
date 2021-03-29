@@ -1,12 +1,12 @@
 import '../styles/globals.css';
 import Layout from '../components/Layout';
 
-function MyApp({ Component, pageProps, data }) {
-  // console.log('Component: ', Component);
-  // console.log('pageProps', pageProps);
-  // console.log('data', data);
-  const getInitialProps = async (context) => {
-    const res = await fetch('https://fakestoreapi.com/products?limit=1');
+import React from 'react';
+import App from 'next/app';
+
+export default class MyApp extends App {
+  static async getInitialProps() {
+    const res = await fetch('https://fakestoreapi.com/products?limit=2');
     const data = await res.json();
     console.log('data', data);
 
@@ -17,17 +17,17 @@ function MyApp({ Component, pageProps, data }) {
     }
 
     return {
-      props: { data }, // will be passed to the page component as props
+      pageProps: data,
     };
-  };
+  }
 
-  // const dataProp = getInitialProps();
-
-  return (
-    <Layout>
-      <Component {...pageProps} state={getInitialProps()} />
-    </Layout>
-  );
+  render() {
+    const { Component, pageProps } = this.props;
+    console.log('this', pageProps);
+    return (
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    );
+  }
 }
-
-export default MyApp;

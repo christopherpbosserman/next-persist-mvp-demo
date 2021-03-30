@@ -1,8 +1,10 @@
 import React from 'react';
+import Product from '../components/Product';
+import { useAppContext } from '../context/state';
 
 const containerStyles = {
   display: 'flex',
-  justifyContent: 'center',
+  jiustifyntent: 'center',
   alignItems: 'center',
   width: '30rem',
 };
@@ -19,12 +21,22 @@ const favoritesStyles = {
   height: '16rem',
 };
 
-function Favorites() {
+function FavoritesContainer({ state }) {
+  const sharedState = useAppContext();
+  console.log('FavoritesContainer', sharedState.favorites);
+
+  const favorites = sharedState.favorites.map((product) => {
+    return <Product product={product} />;
+  });
+
+  // console.log('FavoritesContainer: ', state[0]);
   return (
     <div className="container" style={containerStyles}>
-      <ul className="favorites-container" style={favesContainerStyles}>
+      {favorites}
+      {/* <ul className="favorites-container" style={favesContainerStyles}>
         <li className="fav" style={favoritesStyles}>
           Favorite 1
+          <Product product={state[0]} />
         </li>
         <li className="fav" style={favoritesStyles}>
           Favorite 2
@@ -32,9 +44,9 @@ function Favorites() {
         <li className="fav" style={favoritesStyles}>
           Favorite 3
         </li>
-      </ul>
+      </ul> */}
     </div>
   );
 }
 
-export default Favorites;
+export default FavoritesContainer;

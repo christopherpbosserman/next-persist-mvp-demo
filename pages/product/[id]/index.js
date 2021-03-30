@@ -1,16 +1,51 @@
-const product = () => {
+import Link from 'next/link';
+import { useAppContext } from '../../../context/state';
+
+const imageStyles = {
+  // border: '3px solid green',
+  height: '500px',
+  width: '800px',
+};
+
+const descriptionStyles = {
+  // border: '3px solid red',
+};
+
+const product = ({ data }) => {
+  const sharedState = useAppContext();
+  console.log('shared state in product page: ', sharedState);
   return (
-    <>
-      <h1>This is a Product Page</h1>
-      <p>This is the description.</p>
-    </>
+    <div className="product-container">
+      <div className="product-image" style={imageStyles}>
+        <img src={data.image} height="400px" width="400px" />
+      </div>
+      <div className="product-description" style={descriptionStyles}>
+        <h2>{data.title}</h2>
+        <h4>${data.price}</h4>
+        <p>{data.description}</p>
+      </div>
+      <div className="user-interactions">
+        <Link href="/Cart">
+          <button
+            onClick={() => {
+              sharedState.setSharedState('cart', data);
+            }}
+          >
+            Add To Cart
+          </button>
+        </Link>
+        <button onClick={() => sharedState.setSharedState('favorites', data)}>
+          Add To Favorites
+        </button>
+      </div>
+    </div>
   );
 };
 
 export const getStaticProps = async (context) => {
   console.log('getStaticProps fired...');
   const res = await fetch(
-    `http://localhost:3000/api/products/${context.params.id}`
+    `https://fakestoreapi.com/products/${context.params.id}`
   );
   const data = await res.json();
   console.log('getStaticProps data:', data);
@@ -34,7 +69,6 @@ export const getStaticPaths = async () => {
   const ids = data.map((product) => product.id);
   console.log('ids', ids);
   const paths = ids.map((id) => {
-    // console.log('id in map', id);
     return {
       params: {
         id: id.toString(),

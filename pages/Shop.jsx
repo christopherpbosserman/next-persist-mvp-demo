@@ -10,7 +10,7 @@ function Shop({ data }) {
   const products = [];
 
   for (let i = 0; i < data.length; i++) {
-    products.push(<Product products={data[i]} key={i} />);
+    products.push(<Product product={data[i]} key={i} />);
   }
 
   return <div>{products}</div>;

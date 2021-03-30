@@ -9,7 +9,7 @@ const containerStyles = {
   width: '30rem',
 };
 
-function CartContainer({ state }) {
+function CartContainer() {
   const sharedState = useAppContext();
   console.log('CartContainer', sharedState.cart);
 

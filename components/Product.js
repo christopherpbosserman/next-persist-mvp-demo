@@ -1,5 +1,4 @@
 import React from 'react';
-import { useAppContext } from '../context/state';
 import Link from 'next/link';
 
 const Product = ({ product }) => {

@@ -1,6 +1,5 @@
 import FavoritesContainer from '../containers/FavoritesContainer';
 import { useAppContext } from '../context/state';
-import { setState } from 'react';
 
 const homeLayout = {
   display: 'flex',
@@ -9,12 +8,7 @@ const homeLayout = {
   zIndex: '-1',
 };
 
-export default function Home(props) {
-  const sharedState = useAppContext();
-  // const [state, setState] = useAppContext(AppContext);
-
-  console.log('index', sharedState);
-
+export default function Home() {
   return (
     <div className="rock-home" style={homeLayout}>
       <img
@@ -23,13 +17,7 @@ export default function Home(props) {
         width="800"
         height="800"
       ></img>
-      {/* <button onClick={setState((state) => ({ ...state, fuckingState: 'GA' }))}>
-        NOT TINY
-      </button> */}
-      <button onClick={() => sharedState.sharedStateFunction()}>
-        TEST BUTTON
-      </button>
-      {/* <FavoritesContainer /> */}
+      <FavoritesContainer />
     </div>
   );
 }

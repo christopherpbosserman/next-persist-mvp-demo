@@ -1,5 +1,4 @@
 import FavoritesContainer from '../containers/FavoritesContainer';
-import { useAppContext } from '../context/state';
 import styles from '../styles/Home.module.css';
 import Link from 'next/link';
 
@@ -8,8 +7,8 @@ export default function Home() {
     <div className={styles.landingCont}>
       <img
         className={styles.landingImg}
-        alt="image of a shopping bag"
-        src="/assets/shoppingBag.jpg"
+        alt="image of some clothes"
+        src="/assets/landingImg.jpeg"
       ></img>
       <Link href="/Shop">
         <button className={styles.shopBtn}>SHOP NOW</button>

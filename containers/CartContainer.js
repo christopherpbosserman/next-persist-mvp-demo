@@ -1,6 +1,7 @@
 import React from 'react';
 import Product from '../components/Product';
 import { useAppContext } from '../context/state';
+import Link from 'next/link';
 
 const containerStyles = {
   display: 'flex',
@@ -14,12 +15,25 @@ function CartContainer() {
   console.log('CartContainer', sharedState.cart);
 
   const cart = sharedState.cart.map((product) => {
-    return <Product product={product} />;
+    return (
+      <div>
+        <h3>{product.title}</h3>
+        <Product product={product} />
+        <p>${product.price}</p>
+      </div>
+    );
   });
+
+  const cartTotal = sharedState.cartTotal;
 
   return (
     <div className="container" style={containerStyles}>
       {cart}
+      <Link href={'/Shop'}>
+        <button>Continue Shopping</button>
+      </Link>
+      <button>Checkout</button>
+      <p>Fuck your total: ${cartTotal}</p>
     </div>
   );
 }

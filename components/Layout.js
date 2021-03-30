@@ -1,110 +1,64 @@
 import React, { Component } from 'react';
 import Link from 'next/link';
+import styles from '../styles/Layout.module.css';
+import { useAppContext } from '../context/state';
 
-// const layoutStyle = {
-//   display: 'flex',
-//   justifyContent: 'space-between',
-//   marginBottom: '-100px',
-// };
-
-// const navbarStyle = {
-//   border: '4px solid peach',
-//   fontSize: '2rem',
-//   backgroundColor: 'lightgrey',
-//   padding: '100px 30px',
-//   marginTop: 'none',
-// };
-
-// const bannerStyle = {
-//   margin: '180px 0 0 0',
-//   fontSize: '10rem',
-//   zIndex: '2',
-// };
-
-// const homeButtonStyle = {
-//   marginLeft: '129px',
-// };
-
-const containerStyles = {
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'space-between',
-  width: '100vw',
-};
-
-const layoutStyle = {
-  display: 'flex',
-  justifyContent: 'space-between',
-};
-
-const bannerStyle = {
-  marginTop: '3rem',
-  width: '50%',
-  position: 'absolute',
-  marginLeft: 'auto',
-  marginRight: 'auto',
-  left: '0',
-  right: '0',
-  textAlign: 'center',
-  fontSize: '100px',
-  zIndex: '2',
-};
-
-const productStyles = {
-  marginTop: '5rem',
-};
-
-const navbarStyle = {
-  fontSize: '2rem',
-  padding: '20px',
-};
-
-const homeButtonStyle = {
-  margin: '50px',
-  // marginLeft: '129px',
-};
-
-const navbarItemStyle = {
-  padding: '5px',
-  fontSize: '18px',
-};
-
-const Layout = (props) => (
-  <div>
-    <div className="page-layout" style={layoutStyle}>
-      <ul className="navbar" style={navbarStyle}>
-        <li>
-          <Link href="/">Home</Link>
-        </li>
-        <li>
-          <Link href="/Shop">Shop</Link>
-        </li>
-        <li>
-          <Link href="/Favorites">Favorites</Link>
-        </li>
-        <li>
-          <Link href="/About">About</Link>
-        </li>
-        <li>
-          <Link href="/Cart">Cart</Link>
-        </li>
-      </ul>
-      <h1 className="banner" style={bannerStyle}>
-        moistJS
-      </h1>
-      <Link href="/">
-        <img
-          className="homeButton"
-          style={homeButtonStyle}
-          alt="rocklogo"
-          src="/assets/rockLogo.png"
-          width="64"
-          height="64"
-        ></img>
-      </Link>
+const Layout = (props) => {
+  const sharedState = useAppContext();
+  return (
+    <div className={styles.container}>
+      <h1 className={styles.banner}>mostJS</h1>
+      <div className={styles.layoutContainer}>
+        <ul className={styles.navbar}>
+          <li className={styles.navbarItem}>
+            <Link href="/">Home</Link>
+          </li>
+          <li className={styles.navbarItem}>
+            <Link href="/Shop">Shop</Link>
+          </li>
+          <li className={styles.navbarItem}>
+            <Link href="/Favorites">Favorites</Link>
+          </li>
+          <li className={styles.navbarItem}>
+            <Link href="/About">About</Link>
+          </li>
+          <li className={styles.navbarItem}>
+            <Link href="/Cart">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="64"
+                height="64"
+                fill="currentColor"
+                class="bi bi-bag"
+                viewBox="0 0 16 16"
+              >
+                <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
+                <text
+                  x="5.19"
+                  y="13.5"
+                  fontSize="10"
+                  fill="black"
+                  stroke="black"
+                  strokeWidth=".06"
+                >
+                  {sharedState.cart.length}
+                </text>
+              </svg>
+            </Link>
+          </li>
+        </ul>
+        <Link href="/">
+          <img
+            className={styles.logoImg}
+            alt="rocklogo"
+            src="/assets/logoImg.png
+          "
+          ></img>
+        </Link>
+      </div>
+      <div className={styles.product}>{props.children}</div>
     </div>
-    <>{props.children}</>
-  </div>
-);
+  );
+};
 
 export default Layout;

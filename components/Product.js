@@ -6,7 +6,6 @@ const Product = ({ product }) => {
 
   return (
     <div>
-      <h1>Product</h1>
       <Link href={`/product/${product.id}`}>
         <img src={product.image} height="200px" width="200px" />
       </Link>

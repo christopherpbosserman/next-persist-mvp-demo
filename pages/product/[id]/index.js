@@ -25,6 +25,7 @@ const product = ({ data }) => {
           <button
             onClick={() => {
               sharedState.setSharedState('cart', data);
+              sharedState.setSharedState('cartTotal', data);
             }}
           >
             Add To Cart

@@ -11,14 +11,14 @@
 }
 
 .shopBtn {
-  margin-top: 14%;
+  margin-top: 26%;
   z-index: 1;
   border: 2px solid #f8f9fa;
   font-size: 1.8rem;
   font-weight: 700;
   padding: 10px 24px;
   background-color: #4281a4;
-  border-radius: 5px;
+  border-radius: 3px;
   color: #f8f9fa;
   outline: none;
   cursor: pointer;

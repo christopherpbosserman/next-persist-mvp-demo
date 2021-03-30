@@ -1,22 +1,19 @@
 import FavoritesContainer from '../containers/FavoritesContainer';
 import { useAppContext } from '../context/state';
-
-const homeLayout = {
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  zIndex: '-1',
-};
+import styles from '../styles/Home.module.css';
+import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div className="rock-home" style={homeLayout}>
+    <div className={styles.landingCont}>
       <img
-        alt="therockjohnson"
-        src="/assets/therock.jpg"
-        width="800"
-        height="800"
+        className={styles.landingImg}
+        alt="image of a shopping bag"
+        src="/assets/shoppingBag.jpg"
       ></img>
+      <Link href="/Shop">
+        <button className={styles.shopBtn}>SHOP NOW</button>
+      </Link>
       <FavoritesContainer />
     </div>
   );

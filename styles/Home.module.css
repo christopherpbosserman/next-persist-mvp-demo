@@ -1,17 +1,24 @@
 .landingCont {
+  /* border: 3px solid green; */
+  margin-top: -6rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: -1;
+  z-index: 1;
+  position: relative;
+  width: 75%;
 }
 
 .landingImg {
   position: absolute;
-  max-width: 50%;
+}
+
+.btnWrapper {
+  position: relative;
+  margin-top: 45rem;
 }
 
 .shopBtn {
-  margin-top: 26%;
   z-index: 1;
   border: 2px solid #f8f9fa;
   font-size: 1.8rem;

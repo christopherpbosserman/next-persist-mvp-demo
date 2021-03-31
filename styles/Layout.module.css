@@ -1,8 +1,11 @@
 .container {
+  position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 100vw;
+  /* border: 3px solid red; */
+  z-index: -1;
 }
 
 .layoutContainer {
@@ -23,10 +26,6 @@
   z-index: 2;
 }
 
-.product {
-  margin-top: 5rem;
-}
-
 .navbar {
   padding: 20px;
 }
@@ -35,6 +34,8 @@
   padding: 0.5rem;
   font-size: 2rem;
   font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .logoImg {
@@ -42,4 +43,32 @@
   width: 10rem;
   height: 5rem;
   cursor: pointer;
+}
+
+.contentContainer {
+  margin-top: -6rem;
+  /* border: 3px solid orange; */
+  justify-content: center;
+  display: flex;
+  z-index: -1;
+}
+
+.navbarItem:hover {
+  color: #e6b89c;
+  text-decoration: underline;
+  text-underline-position: under;
+}
+
+.cart {
+  padding: 0.5rem;
+  text-decoration: none;
+  font-size: 10px;
+  stroke: #336480;
+  stroke-width: 0.06;
+  transition: 0.1s;
+}
+
+.cart:hover {
+  color: #e6b89c;
+  /* text-decoration: underline; */
 }

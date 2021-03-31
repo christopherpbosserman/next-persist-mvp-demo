@@ -1,13 +1,7 @@
 import React from 'react';
 import Product from '../components/Product';
 import { useAppContext } from '../context/state';
-
-const containerStyles = {
-  display: 'flex',
-  jiustifyntent: 'center',
-  alignItems: 'center',
-  width: '30rem',
-};
+import styles from '../styles/Favorites.module.css';
 
 function FavoritesContainer() {
   const sharedState = useAppContext();
@@ -17,8 +11,9 @@ function FavoritesContainer() {
   });
 
   return (
-    <div className="container" style={containerStyles}>
-      {favorites}
+    <div className={styles.favoritesContainer}>
+      <h1>Your Favorited Items</h1>
+      <div className={styles.productsContainer}>{favorites}</div>
     </div>
   );
 }

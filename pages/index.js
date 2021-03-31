@@ -10,10 +10,11 @@ export default function Home() {
         alt="image of some clothes"
         src="/assets/landingImg.jpeg"
       ></img>
-      <Link href="/Shop">
-        <button className={styles.shopBtn}>SHOP NOW</button>
-      </Link>
-      <FavoritesContainer />
+      <div className={styles.btnWrapper}>
+        <Link href="/Shop">
+          <button className={styles.shopBtn}>SHOP NOW</button>
+        </Link>
+      </div>
     </div>
   );
 }

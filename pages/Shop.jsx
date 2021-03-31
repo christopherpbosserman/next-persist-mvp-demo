@@ -1,12 +1,9 @@
 import React from 'react';
 import Product from '../components/Product';
+import ProductsContainer from '../containers/ProductsContainer';
 
 function Shop({ data }) {
-  const products = data.map((product, i) => {
-    return <Product product={product} key={i} />;
-  });
-
-  return <div>{products}</div>;
+  return <ProductsContainer products={data} />;
 }
 
 export const getStaticProps = async () => {

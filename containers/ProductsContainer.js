@@ -1,6 +1,5 @@
 import React from 'react';
 import Product from '../components/Product';
-import { useAppContext } from '../context/state';
 import styles from '../styles/Favorites.module.css';
 
 function ProductsContainer({ products }) {

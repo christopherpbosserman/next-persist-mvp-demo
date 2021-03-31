@@ -1,5 +1,5 @@
 import { createContext, useContext } from 'react';
-import { getStorage, writeStorage } from '../lib/next-persist';
+import { getStorage, writeStorage } from 'next-persist';
 
 const sharedState = {
   cart: [],
@@ -12,7 +12,6 @@ const sharedState = {
         sharedState[location].push(product);
       } else {
         sharedState[location] += product.price;
-        console.log('price in shared state: ', sharedState.cartTotal);
       }
     } else {
       const position = sharedState[location].indexOf(product);
@@ -36,7 +35,5 @@ let AppContext = createContext(getStorage(nextPersistConfig, sharedState));
 
 export function useAppContext() {
   AppContext = createContext(getStorage(nextPersistConfig, sharedState));
-  const newContext = useContext(AppContext);
-  console.log('newContext', newContext);
-  return newContext;
+  return useContext(AppContext);
 }

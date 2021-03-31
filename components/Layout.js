@@ -5,10 +5,9 @@ import { useAppContext } from '../context/state';
 
 const Layout = (props) => {
   const sharedState = useAppContext();
-  console.log('in layout', sharedState);
   return (
     <div className={styles.container}>
-      <h1 className={styles.banner}>mostJS</h1>
+      <h1 className={styles.banner}>most.js</h1>
 
       <div className={styles.layoutContainer}>
         <ul className={styles.navbar}>

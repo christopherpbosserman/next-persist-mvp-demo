@@ -1,4 +1,5 @@
 import { createContext, useContext } from 'react';
+import { getStorage, writeStorage } from '../lib/next-persist';
 
 const sharedState = {
   cart: [],
@@ -17,6 +18,7 @@ const sharedState = {
       const position = sharedState[location].indexOf(product);
       sharedState[location].splice(position, 1);
     }
+    writeStorage(sharedState);
   },
 };
 
@@ -26,8 +28,15 @@ export function AppWrapper({ children }) {
   );
 }
 
-const AppContext = createContext(sharedState);
+const nextPersistConfig = {
+  allowList: ['cart', 'favorites', 'cartTotal'],
+};
+
+let AppContext = createContext(getStorage(nextPersistConfig, sharedState));
 
 export function useAppContext() {
-  return useContext(AppContext);
+  AppContext = createContext(getStorage(nextPersistConfig, sharedState));
+  const newContext = useContext(AppContext);
+  console.log('newContext', newContext);
+  return newContext;
 }

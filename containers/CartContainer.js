@@ -8,9 +8,9 @@ function CartContainer() {
   const sharedState = useAppContext();
   console.log('CartContainer', sharedState.cart);
 
-  const cart = sharedState.cart.map((product) => {
+  const cart = sharedState.cart.map((product, i) => {
     return (
-      <div className={styles.cartItems}>
+      <div className={styles.cartItems} key={i}>
         <div className={styles.cartItem}>
           <Link href={`/product/${product.id}`}>
             <img src={product.image} height="100px" width="100px" />
@@ -37,11 +37,11 @@ function CartContainer() {
             <button>Continue Shopping</button>
           </Link>
         </div>
-        
+
         <div className={styles.cartButton}>
-        <div className={styles.subTotal}>
-          <button>Checkout</button>
-        </div>
+          <div className={styles.subTotal}>
+            <button>Checkout</button>
+          </div>
           <p>Subtotal: ${cartTotal}</p>
         </div>
       </div>

@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: space-between;
   /* align-items: center; */
-  margin-left: 15rem;
+  /* margin-left: 15rem; */
   width: 100%;
   /* border: dotted black; */
 }
@@ -20,7 +20,7 @@
 
 .cartItem {
   /* padding: 10px 100px; */
-  display:flex;
+  display: flex;
   align-items: center;
   padding: 10px;
   /* border: dotted seagreen; */

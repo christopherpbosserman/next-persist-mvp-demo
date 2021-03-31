@@ -1,13 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Product from '../components/Product';
 import { useAppContext } from '../context/state';
 import styles from '../styles/Favorites.module.css';
 
 function FavoritesContainer() {
-  const sharedState = useAppContext();
+  let sharedState = useAppContext();
+  // console.log('favoritesContainer', sharedState);
 
-  const favorites = sharedState.favorites.map((product) => {
-    return <Product product={product} />;
+  // useEffect(() => {
+  //   console.log('useEffect', sharedState);
+  // }, [sharedState]);
+
+  const favorites = sharedState.favorites.map((product, i) => {
+    return <Product product={product} key={i} />;
   });
 
   return (

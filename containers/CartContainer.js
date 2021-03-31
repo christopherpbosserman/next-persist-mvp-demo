@@ -2,13 +2,7 @@ import React from 'react';
 import Product from '../components/Product';
 import { useAppContext } from '../context/state';
 import Link from 'next/link';
-
-const containerStyles = {
-  display: 'flex',
-  jiustifyntent: 'center',
-  alignItems: 'center',
-  width: '30rem',
-};
+import styles from '../styles/Cart.module.css';
 
 function CartContainer() {
   const sharedState = useAppContext();
@@ -16,10 +10,18 @@ function CartContainer() {
 
   const cart = sharedState.cart.map((product) => {
     return (
-      <div>
-        <h3>{product.title}</h3>
-        <Product product={product} />
-        <p>${product.price}</p>
+      <div className={styles.cartItems}>
+        <div className={styles.cartItem}>
+          <Link href={`/product/${product.id}`}>
+            <img src={product.image} height="100px" width="100px" />
+          </Link>
+        </div>
+        <div className={styles.cartItem}>
+          <h4>{product.title}</h4>
+        </div>
+        <div className={styles.cartItem}>
+          <p>${product.price}</p>
+        </div>
       </div>
     );
   });
@@ -27,13 +29,22 @@ function CartContainer() {
   const cartTotal = sharedState.cartTotal;
 
   return (
-    <div className="container" style={containerStyles}>
-      {cart}
-      <Link href={'/Shop'}>
-        <button>Continue Shopping</button>
-      </Link>
-      <button>Checkout</button>
-      <p>Fuck your total: ${cartTotal}</p>
+    <div className={styles.cartContainer}>
+      <div>{cart}</div>
+      <div className={styles.cartButtons}>
+        <div className={styles.cartButton}>
+          <Link href={'/Shop'}>
+            <button>Continue Shopping</button>
+          </Link>
+        </div>
+        
+        <div className={styles.cartButton}>
+        <div className={styles.subTotal}>
+          <button>Checkout</button>
+        </div>
+          <p>Subtotal: ${cartTotal}</p>
+        </div>
+      </div>
     </div>
   );
 }

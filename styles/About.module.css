@@ -1,0 +1,38 @@
+.aboutHeader {
+  margin-top: -50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 60px;
+}
+
+.bios {
+  display: grid;
+  grid-template-columns: 250px 250px 250px 250px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 200px;
+  /* border: dotted red; */
+}
+
+.bio {
+  margin: 0px 50px 0px 0px;
+  
+}
+
+.handle {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: center; */
+  width: 120%;
+  align-items: center;
+  /* border: dotted black; */
+
+}
+
+.image{
+  /* display: flex; */
+  /* flex-direction: columns; */
+  /* justify-content: center; */
+  /* align-items: center; */
+}

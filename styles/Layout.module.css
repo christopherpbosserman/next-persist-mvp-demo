@@ -31,7 +31,7 @@
   font-size: 128px;
   z-index: 2;
   -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: #f8f9fa;
+  /* -webkit-text-stroke-color: #f8f9fa; */
 }
 
 .navbar {

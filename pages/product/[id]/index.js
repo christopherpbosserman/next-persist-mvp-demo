@@ -53,6 +53,8 @@ export const getStaticPaths = async () => {
   const res = await fetch('https://fakestoreapi.com/products?limit=6');
   const data = await res.json();
 
+  console.log('Product Information: ', data);
+
   const ids = data.map((product) => product.id);
   const paths = ids.map((id) => {
     return {

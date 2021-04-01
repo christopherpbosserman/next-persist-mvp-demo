@@ -7,7 +7,7 @@ const CartRow = ({ product }) => {
     <div className={styles.cartItems}>
       <div className={styles.cartItem}>
         <Link href={`/product/${product.id}`}>
-          <img src={product.image} height="100px" width="100px" />
+          <img className={styles.cartImg} src={product.image} />
         </Link>
       </div>
       <div className={styles.cartItem}>

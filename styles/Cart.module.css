@@ -60,6 +60,7 @@
   color: #f8f9fa;
   padding: 1rem;
   letter-spacing: 1px;
+  outline: none;
 }
 
 .buttons:hover {
@@ -108,3 +109,7 @@
   border-bottom: 1px solid gray;
 }
 
+.cartImg {
+  height: auto;
+  width: 100px;
+}

@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;400;700;900&display=swap');
 
 html,
 body {
-  background-color: #F8F8F8;
+  background-color: #f8f8f8;
   /* color: #212529; */
-  /* color: #336480; */
-  color: black;
+  color: #336480;
+  /* color: black; */
   padding: 0;
   margin: 0;
   /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -36,4 +36,3 @@ ul {
 p {
   margin: 0;
 }
-

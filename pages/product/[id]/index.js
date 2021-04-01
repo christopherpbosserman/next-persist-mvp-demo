@@ -50,7 +50,7 @@ export const getStaticProps = async (context) => {
 };
 
 export const getStaticPaths = async () => {
-  const res = await fetch('https://fakestoreapi.com/products?limit=6');
+  const res = await fetch('https://fakestoreapi.com/products?limit=12');
   const data = await res.json();
 
   console.log('Product Information: ', data);

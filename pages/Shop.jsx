@@ -7,7 +7,7 @@ function Shop({ data }) {
 }
 
 export const getStaticProps = async () => {
-  const res = await fetch('https://fakestoreapi.com/products?limit=6');
+  const res = await fetch('https://fakestoreapi.com/products?limit=12');
   const data = await res.json();
 
   if (!data) {

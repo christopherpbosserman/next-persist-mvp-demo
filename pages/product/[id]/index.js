@@ -32,7 +32,7 @@ const product = ({ data }) => {
       <div className={styles.productDescription}>
         <h2>{data.title}</h2>
         <h4>${Number(data.price).toFixed(2)}</h4>
-        <text className={styles.descriptionText}>{data.description}</text>
+        <p className={styles.descriptionText}>{data.description}</p>
       </div>
     </div>
   );

@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   width: 100vw;
   /* border: 3px solid red; */
   z-index: -1;
@@ -10,7 +11,12 @@
 
 .layoutContainer {
   display: flex;
+  width: 100%;
   justify-content: space-between;
+  position: sticky;
+  top: 0;
+  /* background-color: transparent; */
+  z-index: -1;
 }
 
 .banner {
@@ -24,6 +30,8 @@
   text-align: center;
   font-size: 128px;
   z-index: 2;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #f8f9fa;
 }
 
 .navbar {
@@ -47,6 +55,7 @@
 
 .contentContainer {
   margin-top: -6rem;
+  width: 75%;
   /* border: 3px solid orange; */
   justify-content: center;
   display: flex;
@@ -54,7 +63,8 @@
 }
 
 .navbarItem:hover {
-  color: #e6b89c;
+  /* color: #e6b89c; */
+  color: #fe938c;
   text-decoration: underline;
   text-underline-position: under;
 }
@@ -65,10 +75,12 @@
   font-size: 10px;
   stroke: #336480;
   stroke-width: 0.06;
-  transition: 0.1s;
+  transition: 0s;
 }
 
 .cart:hover {
-  color: #e6b89c;
+  /* color: #e6b89c; */
+  color: #fe938c;
+
   /* text-decoration: underline; */
 }

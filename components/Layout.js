@@ -1,10 +1,20 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import styles from '../styles/Layout.module.css';
 import { useAppContext } from '../context/state';
 
 const Layout = (props) => {
   const sharedState = useAppContext();
+
+  const [hasMounted, setHasMounted] = useState(false);
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
+  if (!hasMounted) {
+    return null;
+  }
+
   return (
     <div className={styles.container}>
       <h1 className={styles.banner}>most.js</h1>

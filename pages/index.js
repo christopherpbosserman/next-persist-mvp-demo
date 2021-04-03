@@ -1,4 +1,3 @@
-import FavoritesContainer from '../containers/FavoritesContainer';
 import styles from '../styles/Home.module.css';
 import Link from 'next/link';
 

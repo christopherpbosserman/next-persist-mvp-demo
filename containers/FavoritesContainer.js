@@ -4,7 +4,7 @@ import { useAppContext } from '../context/state';
 import styles from '../styles/Favorites.module.css';
 
 function FavoritesContainer() {
-  let sharedState = useAppContext();
+  const sharedState = useAppContext();
 
   const favorites = sharedState.favorites.map((product, i) => {
     return <Product product={product} key={`product${i}`} />;

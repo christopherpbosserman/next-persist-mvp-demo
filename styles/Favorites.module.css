@@ -1,5 +1,5 @@
 .favoritesContainer {
-  margin-top: -6rem;
+  margin-top: -2rem;
   /* border: 3px solid pink; */
   display: flex;
   flex-direction: column;
@@ -8,6 +8,7 @@
   width: 90%;
   height: 100%;
   z-index: -1;
+  background: white;
 }
 
 .productsContainer {

@@ -16,6 +16,8 @@
   position: sticky;
   top: 0;
   /* background-color: transparent; */
+  /* border: 3px solid red; */
+
   z-index: -1;
 }
 
@@ -28,9 +30,10 @@
   left: 0;
   right: 0;
   text-align: center;
-  font-size: 128px;
+  font-size: 8.5rem;
+  font-weight: 900;
   z-index: 2;
-  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #f8f9fa;
 }
 
@@ -49,7 +52,7 @@
 .logoImg {
   margin: 50px;
   width: 10rem;
-  height: 5rem;
+  height: 10rem;
   cursor: pointer;
 }
 

@@ -16,7 +16,6 @@ const product = ({ data }) => {
             className={styles.buttons}
             onClick={() => {
               sharedState.setSharedState('cart', data);
-              sharedState.setSharedState('cartTotal', data);
             }}
           >
             Add To Cart
@@ -30,8 +29,8 @@ const product = ({ data }) => {
         </button>
       </div>
       <div className={styles.productDescription}>
-        <h2>{data.title}</h2>
-        <h4>${Number(data.price).toFixed(2)}</h4>
+        <h3>{data.title}</h3>
+        <h2>${Number(data.price).toFixed(2)}</h2>
         <p className={styles.descriptionText}>{data.description}</p>
       </div>
     </div>
@@ -50,8 +49,10 @@ export const getStaticProps = async (context) => {
 };
 
 export const getStaticPaths = async () => {
-  const res = await fetch('https://fakestoreapi.com/products?limit=6');
+  const res = await fetch('https://fakestoreapi.com/products?limit=12');
   const data = await res.json();
+
+  // console.log('Product Information: ', data);
 
   const ids = data.map((product) => product.id);
   const paths = ids.map((id) => {
